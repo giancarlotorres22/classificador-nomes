@@ -2,6 +2,11 @@ from flask import Flask,render_template,url_for,request
 from flask_bootstrap import Bootstrap 
 import pandas as pd 
 
+#web heroku
+import sys
+import logging
+import os
+
 #para facilitar a manipulação com números e ser utilizado com o Naive Bayes
 from sklearn.feature_extraction.text import CountVectorizer
 
