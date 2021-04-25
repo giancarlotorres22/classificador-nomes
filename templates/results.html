@@ -1,0 +1,51 @@
+{% extends "bootstrap/base.html" %}
+{% block content %}
+
+
+
+<div class="container">
+  <div class="jumbotron" style="background-color:#917a80 !important;">
+    <h2 style="color:#fff;">Classificador de Nomes</h2>      
+    <p style="color:#fff;">ML para identificar sexo do nome de uma pessoa</p>
+  </div>
+  <p>Giancarlo Lima Torres</p>           
+</div>
+
+<div class="card text-center">
+  <div class="card-header">
+    Resultado:
+  </div>
+  <div class="card-body" style="background-color:#917a80;">
+    <h5 class="card-title"></h5>
+    <hr/>
+    <p class="card-text"><div class="alert alert-danger" role="alert">
+  {{ name }}
+</div></p>
+
+<!-- Exibe o Resultado da predição -->
+    {% if prediction ==  0 %}
+    <p class="card-text"><div class="alert alert-danger" role="alert">
+  Feminino
+</div></p>
+    <a href="#" class="btn btn-danger">Feminino</a>
+     {% elif prediction == 1 %}
+	<p class="card-text"><div class="alert alert-danger" role="alert">
+  Masculino
+</div></p>
+    <a href="#" class="btn btn-primary">Masculino</a>
+    {% endif%}
+  </div>
+<!-- Exibe o Resultado da predição -->
+  <div class="card-footer text-muted">
+   
+  </div>
+</div>
+
+
+{% endblock %}
+
+{% block styles %}
+{{super()}}
+<link rel="stylesheet"
+      href="{{url_for('.static', filename='css/styles.css')}}">
+{% endblock %}
