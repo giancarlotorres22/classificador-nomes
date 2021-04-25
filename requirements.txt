@@ -9,3 +9,4 @@ gevent
 pytest
 sklearn
 pandas
+Flask-Bootstrap==3.3.0.1
